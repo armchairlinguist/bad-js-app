@@ -67,6 +67,7 @@ const AddressModelInit = (sequelize: Sequelize) => {
     },
     {
       tableName: 'Addresses',
+      // TODO: Sequelize
       sequelize
     }
   )
