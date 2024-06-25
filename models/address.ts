@@ -26,7 +26,7 @@ InferCreationAttributes<Address>
   declare state: string | null
   declare country: string
 }
-
+// TODO: It isn't a Jira ticket
 const AddressModelInit = (sequelize: Sequelize) => {
   Address.init(
     {
