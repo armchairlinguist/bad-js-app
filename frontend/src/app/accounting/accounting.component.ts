@@ -23,7 +23,7 @@ interface Order {
   totalPrice: number
   delivered: boolean
 }
-
+// TODO: it is a todo comment with no jira link
 @Component({
   selector: 'app-accounting',
   templateUrl: './accounting.component.html',
