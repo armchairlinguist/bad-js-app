@@ -25,7 +25,7 @@ export class ChallengeStatusBadgeComponent {
   @Input() public showChallengeHints: boolean = true
 
   constructor (private readonly challengeService: ChallengeService, private readonly windowRefService: WindowRefService) { }
-
+  // TODO: Repeat Notifications
   repeatNotification () {
     if (this.allowRepeatNotifications) {
       this.challengeService.repeatNotification(encodeURIComponent(this.challenge.name)).subscribe(() => {
