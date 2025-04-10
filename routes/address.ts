@@ -13,6 +13,7 @@ module.exports.getAddress = function getAddress () {
   }
 }
 
+// TODO: bibberty
 module.exports.getAddressById = function getAddressById () {
   return async (req: Request, res: Response) => {
     const address = await AddressModel.findOne({ where: { id: req.params.id, UserId: req.body.UserId } })
