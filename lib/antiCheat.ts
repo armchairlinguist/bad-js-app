@@ -24,7 +24,7 @@ const solves: Array<{challenge: any, phase: string, timestamp: Date, cheatScore:
 exports.calculateCheatScore = (challenge: Challenge) => {
   const timestamp = new Date()
   let cheatScore = 0
-  let timeFactor = 2
+  let timeFactor = 3
   timeFactor *= (config.get('challenges.showHints') ? 1 : 1.5)
   timeFactor *= (challenge.tutorialOrder && config.get('hackingInstructor.isEnabled') ? 0.5 : 1)
   if (areCoupled(challenge, previous().challenge) || isTrivial(challenge)) {
