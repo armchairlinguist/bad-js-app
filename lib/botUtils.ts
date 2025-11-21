@@ -16,7 +16,7 @@ async function productPrice (query: string, user: string) {
     .map((product: Product) => `${product.name} costs ${product.price}¤`)
   return {
     action: 'response',
-    body: queriedProducts.length > 0 ? queriedProducts.join(', ') : 'Sorry I couldn\'t find any products with that name'
+    body: queriedProducts.length > 0 ? queriedProducts.join(', ') : 'Sorry, I couldn\'t find any products with that name'
   }
 }
 
@@ -24,7 +24,7 @@ function couponCode (query: string, user: string) {
   challengeUtils.solveIf(challenges.bullyChatbotChallenge, () => { return true })
   return {
     action: 'response',
-    body: `Oooookay, if you promise to stop nagging me here's a 10% coupon code for you: ${security.generateCoupon(10)}`
+    body: `Okay, if you promise to stop nagging me, here's a 10% coupon code for you: ${security.generateCoupon(10)}`
   }
 }
 
