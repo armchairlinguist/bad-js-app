@@ -15,18 +15,14 @@ jobs:
     container:
       image: semgrep/semgrep
     steps:
-      - name: Checkout main branch
+      - name: Checkout all branches/tags
         if: github.ref != 'refs/heads/main' && github.event_name == 'push'
         uses: actions/checkout@v6
         with: 
-          ref: 'main'
-
-      - name: git status
-        run: | 
-          git config --global --add safe.directory /__w/bad-js-app/bad-js-app
-          git status
+          fetch-depth: 0
 
       - name: Checkout current branch
+        if: (github.ref == 'refs/heads/main' && github.event_name == 'push') || github.event_name == 'pull_request'
         uses: actions/checkout@v6
 
       - name: git status 2
@@ -39,8 +35,6 @@ jobs:
       - name: Diff scan on non-default branch (push)
         if: github.ref != 'refs/heads/main' && github.event_name == 'push'
         run: |
-          # git config --global --add safe.directory $GITHUB_WORKSPACE
-          # git checkout $GITHUB_REF
           export SEMGREP_BASELINE_REF="main"
           semgrep ci
 
