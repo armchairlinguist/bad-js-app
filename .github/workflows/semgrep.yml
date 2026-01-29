@@ -21,8 +21,14 @@ jobs:
         with: 
           ref: 'main'
 
+      - name: git status
+        run: git status
+
       - name: Checkout current branch
         uses: actions/checkout@v6
+
+      - name: git status 2
+        run: git status
 
       - name: Full scan on default branch, handle PRs
         if: (github.ref == 'refs/heads/main' && github.event_name == 'push') || github.event_name == 'pull_request'
