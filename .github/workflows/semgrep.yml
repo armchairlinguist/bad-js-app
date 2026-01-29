@@ -32,7 +32,7 @@ jobs:
       - name: Diff scan on non-default branch (push)
         if: github.ref != 'refs/heads/main' && github.event_name == 'push'
         run: |
-          export SEMGREP_BASELINE_REF="main"
+          export SEMGREP_BASELINE_REF="origin/main"
           semgrep ci
 
 # # Name of this GitHub Actions workflow.
