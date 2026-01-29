@@ -22,7 +22,9 @@ jobs:
           ref: 'main'
 
       - name: git status
-        run: git status
+        run: | 
+          git config --global --add safe.directory /__w/bad-js-app/bad-js-app
+          git status
 
       - name: Checkout current branch
         uses: actions/checkout@v6
