@@ -31,7 +31,7 @@ jobs:
       - name: Diff scan on non-default branch (push)
         if: github.ref != 'refs/heads/main' && github.event_name == 'push'
         run: |
-          git config --global --add safe.directory ${{ github.workspace }}
+          git config --global --add safe.directory $GITHUB_WORKSPACE
           git checkout $GITHUB_REF
           export SEMGREP_BASELINE_REF="main"
           semgrep ci
