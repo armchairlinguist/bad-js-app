@@ -21,6 +21,7 @@ const trivialChallenges = ['errorHandlingChallenge', 'privacyPolicyChallenge']
 
 const solves: Array<{challenge: any, phase: string, timestamp: Date, cheatScore: number}> = [{ challenge: {}, phase: 'server start', timestamp: new Date(), cheatScore: 0 }] // seed with server start timestamp
 
+// TODO cheat cheat
 exports.calculateCheatScore = (challenge: Challenge) => {
   const timestamp = new Date()
   let cheatScore = 0
