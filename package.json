@@ -109,6 +109,7 @@
   },
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.11",
+    "basic-ftp": "^5.2.0",
     "body-parser": "^1.19.0",
     "check-branches": "0.0.17",
     "check-dependencies": "^1.1.0",
