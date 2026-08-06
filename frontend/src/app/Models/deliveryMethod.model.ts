@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+// TODO: more stuff
 export interface DeliveryMethod {
   id: number
   name: string
